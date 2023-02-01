@@ -11,10 +11,6 @@ var api_ffz = require('./api/ffz.js')
 var app = express()
 const port = 80
 
-// app.listen(
-//   port, ip.address(),
-//   () => console.log(`twichat API started\nListening on http://${ip.address()}:${port}`)
-// )
 module.exports = router;
 
 app.use(express.json())

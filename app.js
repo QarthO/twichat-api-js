@@ -9,7 +9,6 @@ var app = express();
 // view engine setup
 
 var twichatRouter = require('./routes/twichat/route.js');
-var santaRouter = require('./routes/secret-santa/route')
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -22,7 +21,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use('/', twichatRouter);
-app.use('/', santaRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
