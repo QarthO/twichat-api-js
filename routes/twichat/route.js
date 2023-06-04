@@ -183,20 +183,8 @@ async function main(username){
   return response
 }
 
-app.get('/f', async (req, res) => {
-  console.log('yo')
-  res.render('index.jade')
-  // res.status(200)
-})
-
 const http = require('http')
 httpServer = http.createServer({}, app);
 httpServer.listen(port, () => {
   console.log('listening')
 })
-const io = require('socket.io')(httpServer);
-io.on('connection', function (socket) {
-  console.log(`New connection: ${socket.id}`);
-
-  socket.on('disconnect', () => console.log(`Connection left (${socket.id})`));
-});

@@ -7,7 +7,7 @@ async function fetchChannelEmotes(twitchID) {
             .then(res => {
                 if(res.status != 200) return resolve()
                 let obj = {}
-                Object.assign(obj, ...res.data['emotes'].map((x) => ({[x.name]: x.id})))
+                Object.assign(obj, ...res.data['emote_set']['emotes'].map((x) => ({[x.name]: x.id})))
                 resolve(obj)
             })
             .catch(err => {
