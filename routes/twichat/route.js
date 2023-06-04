@@ -7,6 +7,7 @@ var ip = require("ip");
 var api_twitch = require('./api/twitch.js')
 var api_bttv = require('./api/bttv.js')
 var api_ffz = require('./api/ffz.js')
+var api_7tv = require('./api/7tv.js')
 
 var app = express()
 const port = 80
@@ -39,7 +40,11 @@ app.get('/twitch/user/:username', async (req, res) => {
     },
     ffz: {
       channel: await api_ffz.fetchChannelEmotes(twitchID)
-    }
+    },
+    '7tv': {
+      global: await api_7tv.fetchGlobalEmotes(),
+      channel: await api_7tv.fetchChannelEmotes(twitchID)
+    },
   }
 
   
