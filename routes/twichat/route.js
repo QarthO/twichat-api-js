@@ -5,7 +5,7 @@ const https = require('https')
 var api_twitch = require('./api/twitch.js')
 var api_bttv = require('./api/bttv.js')
 var api_ffz = require('./api/ffz.js')
-var api_7tv = require('./api/7tv.js')
+// var api_7tv = require('./api/7tv.js')
 
 var app = express()
 const port = 80
