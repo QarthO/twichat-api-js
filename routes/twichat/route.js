@@ -38,11 +38,7 @@ app.get('/twitch/user/:username', async (req, res) => {
     },
     ffz: {
       channel: await api_ffz.fetchChannelEmotes(twitchID)
-    },
-    seventv: {
-      global: await api_7tv.fetchGlobalEmotes(),
-      channel: await api_7tv.fetchChannelEmotes(twitchID)
-    },
+    }
   }
 
   
