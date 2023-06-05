@@ -1,11 +1,12 @@
 require('dotenv').config();
+const { response } = require('express');
 var express = require('express');
 var router = express.Router();
 const https = require('https')
+var ip = require("ip");
 var api_twitch = require('./api/twitch.js')
 var api_bttv = require('./api/bttv.js')
 var api_ffz = require('./api/ffz.js')
-// var api_7tv = require('./api/7tv.js')
 
 var app = express()
 const port = 80
@@ -38,11 +39,7 @@ app.get('/twitch/user/:username', async (req, res) => {
     },
     ffz: {
       channel: await api_ffz.fetchChannelEmotes(twitchID)
-    },
-    // seven7tv: {
-    //   global: await api_7tv.fetchGlobalEmotes(),
-    //   channel: await api_7tv.fetchChannelEmotes(twitchID)
-    // },
+    }
   }
 
   
@@ -181,8 +178,20 @@ async function main(username){
   return response
 }
 
+app.get('/f', async (req, res) => {
+  console.log('yo')
+  res.render('index.jade')
+  // res.status(200)
+})
+
 const http = require('http')
 httpServer = http.createServer({}, app);
 httpServer.listen(port, () => {
   console.log('listening')
 })
+const io = require('socket.io')(httpServer);
+io.on('connection', function (socket) {
+  console.log(`New connection: ${socket.id}`);
+
+  socket.on('disconnect', () => console.log(`Connection left (${socket.id})`));
+});

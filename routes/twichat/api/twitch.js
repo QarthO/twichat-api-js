@@ -20,6 +20,8 @@ async function fetchChannelBadges(twitchID) {
         axios.get(url)
             .then(res => {
                 res.status == 200 ? resolve(res.data['badge_sets']) : resolve()
+                console.log('yo')
+                console.log(res.data)
             })
             .catch(err => {
                 console.log(err)
