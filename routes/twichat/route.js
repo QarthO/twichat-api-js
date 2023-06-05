@@ -30,7 +30,7 @@ app.get('/twitch/user/:username', async (req, res) => {
     global: await api_twitch.fetchGlobalBadges(),
     channel: await api_twitch.fetchChannelBadges(twitchID)
   }
-
+  
   var _emotes = {
     bttv: {
       global: await api_bttv.fetchGlobalEmotes(),
@@ -39,7 +39,7 @@ app.get('/twitch/user/:username', async (req, res) => {
     ffz: {
       channel: await api_ffz.fetchChannelEmotes(twitchID)
     },
-    '7tv': {
+    seventv: {
       global: await api_7tv.fetchGlobalEmotes(),
       channel: await api_7tv.fetchChannelEmotes(twitchID)
     },
