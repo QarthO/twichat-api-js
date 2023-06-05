@@ -1,9 +1,7 @@
 require('dotenv').config();
-const { response } = require('express');
 var express = require('express');
 var router = express.Router();
 const https = require('https')
-var ip = require("ip");
 var api_twitch = require('./api/twitch.js')
 var api_bttv = require('./api/bttv.js')
 var api_ffz = require('./api/ffz.js')

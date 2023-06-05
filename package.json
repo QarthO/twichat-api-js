@@ -16,10 +16,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "ip": "^1.1.8",
-    "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "node-fetch": "^3.2.10",
-    "nodemon": "^2.0.15",
-    "socket.io": "^4.5.4"
+    "nodemon": "^2.0.15"
   }
 }
