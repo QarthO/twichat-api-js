@@ -1,9 +1,11 @@
 var express = require('express');
+var path = require('path');
 
 var app = express();
 
 var twichatRouter = require('./routes/twichat/route.js');
 
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
